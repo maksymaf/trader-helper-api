@@ -17,10 +17,7 @@ const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173')
   .split(',')
   .map((origin) => origin.trim());
 
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true 
-}));
+app.use(cors({ origin: 'https://trader-helper.onrender.com' }));
 app.use('/api', userRouter);
 app.use('/api/token', tokenRouter);
 app.use('/api/', tradeRouter);
